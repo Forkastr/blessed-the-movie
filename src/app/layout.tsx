@@ -5,17 +5,17 @@ import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Blessed - The Movie | A Comedy Film",
-  description: "A heartfelt comedy about Jaybird, her bike rental shop, the colorful customers who roll through, and the unbreakable bond with her assistant Linda.",
-  keywords: ["Blessed", "comedy", "movie", "film", "bike rental", "indie film", "Jaybird", "Linda"],
+  description: "A heartfelt comedy about J-Bird, her bike rental shop, the colorful customers who roll through, and the unbreakable bond with her assistant Linda.",
+  keywords: ["Blessed", "comedy", "movie", "film", "bike rental", "indie film", "J-Bird", "Linda", "New Orleans"],
   openGraph: {
     title: "Blessed - The Movie",
-    description: "A heartfelt comedy about Jaybird, her bike rental shop, and the unbreakable bond with her assistant Linda.",
+    description: "A heartfelt comedy about J-Bird, her bike rental shop, and the unbreakable bond with her assistant Linda.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Blessed - The Movie",
-    description: "A heartfelt comedy about Jaybird, her bike rental shop, and the unbreakable bond with her assistant Linda.",
+    description: "A heartfelt comedy about J-Bird, her bike rental shop, and the unbreakable bond with her assistant Linda.",
   },
 };
 

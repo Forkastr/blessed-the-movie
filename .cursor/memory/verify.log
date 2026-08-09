@@ -1,0 +1,20 @@
+# Verify log — blessed-the-movie
+
+## 2026-08-09 — stakeholder content pass
+
+**Tier attempted:** standard (feature content update)
+
+| Check | Result |
+|-------|--------|
+| lint (`npm run lint`) | skip — Node/npm/bun not on PATH; no `node_modules` |
+| build (`npm run build`) | skip — same |
+| Static review | Hero uses `public/images/hero-bridge.png`; Learn More removed; trailer CTA present (`TRAILER_URL` empty → "coming soon"); About/Cast/Press/Crew copy applied; Experience It removed; gallery has 1 real still + placeholders |
+
+**Acceptance leftover (needs stakeholder input):**
+- Official trailer URL
+- Poster-draft / lighted-bikes stills for gallery
+- Neighborhood highlight names (optional)
+- Attribution for “Grace’s friend” quote
+- Press Release PDF + one-pager files when ready
+
+**Done when Node available:** run `npm install && npm run lint && npm run build`
