@@ -53,14 +53,6 @@ const FilmIcon = () => (
   </svg>
 );
 
-const ImageIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5">
-    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-    <circle cx="8.5" cy="8.5" r="1.5" />
-    <polyline points="21,15 16,10 5,21" />
-  </svg>
-);
-
 const StarIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
@@ -258,18 +250,28 @@ const castMembers = [
     role: "Shop Owner",
     description:
       "For nearly two decades, J-Bird has welcomed neighbors and visitors through the gates of her backyard bike rental. Practical, well-read, and quietly funny, she's built far more than a business—she's created a place where stories are shared, friendships take root, and everyone is made to feel at home.",
+    src: "/images/cast-jbird.png",
+    alt: "J-Bird sitting on the rooftop beside the colorful j-bird sign",
+    // Wide roof shot — keep her face (right side) in frame
+    objectPosition: "78% 28%",
   },
   {
     name: "Linda",
     role: "Assistant",
     description:
       "Linda is J-Bird's trusted assistant, closest friend, and greatest source of laughter. Quirky, quick-witted, and full of heart, she has an instinctive understanding of people and a gift for finding joy in every situation. Together, she and J-Bird prove that the deepest friendships aren't built on having the same background—they're built on curiosity, loyalty, and love.",
+    src: "/images/cast-linda.png",
+    alt: "Linda in a yellow blouse sitting amid a pile of pull-tabs",
+    objectPosition: "50% 22%",
   },
   {
     name: "The Neighborhood",
     role: "Locals, Visitors & Friends",
     description:
       "Musicians, tourists, regulars, and neighbors who roll through the backyard gate—bringing laughter, unexpected adventures, and stories that could only happen in New Orleans.",
+    src: "/images/cast-neighborhood.png",
+    alt: "Neighbors dancing together in the middle of a residential street",
+    objectPosition: "45% 35%",
   },
 ];
 
@@ -296,13 +298,14 @@ function CastSection() {
               className="group p-6 bg-card hover:bg-secondary/50 transition-all duration-300 border-border hover:border-primary/30 hover:shadow-xl"
             >
               <div className="aspect-[4/5] rounded-xl bg-gradient-to-br from-secondary via-muted to-secondary mb-6 overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-                    <span className="font-display text-2xl font-bold text-primary">
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
+                <Image
+                  src={member.src}
+                  alt={member.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: member.objectPosition }}
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
 
               <h3 className="font-display text-2xl font-bold mb-1">{member.name}</h3>
@@ -394,12 +397,64 @@ function GallerySection() {
       aspect: "landscape" as const,
       src: "/images/hero-bridge.png",
       alt: "Purple-lit New Orleans bridge reflected in water",
+      objectPosition: "50% 50%",
     },
-    { id: 2, label: "Still — coming soon", aspect: "portrait" as const, src: null, alt: "" },
-    { id: 3, label: "Still — coming soon", aspect: "landscape" as const, src: null, alt: "" },
-    { id: 4, label: "Still — coming soon", aspect: "square" as const, src: null, alt: "" },
-    { id: 5, label: "Still — coming soon", aspect: "landscape" as const, src: null, alt: "" },
-    { id: 6, label: "Still — coming soon", aspect: "portrait" as const, src: null, alt: "" },
+    {
+      id: 2,
+      label: "Justice",
+      aspect: "landscape" as const,
+      src: "/images/still-justice.png",
+      alt: "White JUSTICE letters among potted plants against a brick wall",
+      objectPosition: "50% 45%",
+    },
+    {
+      id: 3,
+      label: "Kids band",
+      aspect: "landscape" as const,
+      src: "/images/still-kids-band.png",
+      alt: "Young performers singing and playing on a jazz-club stage",
+      objectPosition: "50% 35%",
+    },
+    {
+      id: 4,
+      label: "Brass parade",
+      aspect: "landscape" as const,
+      src: "/images/still-brass-parade.png",
+      alt: "Brass band marching and playing down a neighborhood path",
+      objectPosition: "50% 40%",
+    },
+    {
+      id: 5,
+      label: "Garden paint day",
+      aspect: "portrait" as const,
+      src: "/images/still-garden-aprons.png",
+      alt: "Two women arm-in-arm in a garden wearing paintbrush aprons",
+      objectPosition: "50% 22%",
+    },
+    {
+      id: 6,
+      label: "Bass player",
+      aspect: "portrait" as const,
+      src: "/images/still-bass-player.png",
+      alt: "Musician holding a double bass outdoors",
+      objectPosition: "50% 18%",
+    },
+    {
+      id: 7,
+      label: "Night portrait",
+      aspect: "portrait" as const,
+      src: "/images/still-night-portrait.png",
+      alt: "Close portrait of a young man under leafy night foliage",
+      objectPosition: "50% 25%",
+    },
+    {
+      id: 8,
+      label: "Sequin dancers",
+      aspect: "landscape" as const,
+      src: "/images/still-sequin-dancers.png",
+      alt: "Neighbors dancing outdoors in bright sequined costumes",
+      objectPosition: "50% 35%",
+    },
   ];
 
   return (
@@ -432,25 +487,16 @@ function GallerySection() {
                 className={`relative w-full
                 ${item.aspect === "portrait" ? "aspect-[3/4]" : ""}
                 ${item.aspect === "landscape" ? "aspect-video" : ""}
-                ${item.aspect === "square" ? "aspect-square" : ""}
               `}
               >
-                {item.src ? (
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 768px) 50vw, 40vw"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center">
-                      <ImageIcon />
-                      <p className="text-sm text-muted-foreground mt-2">{item.label}</p>
-                    </div>
-                  </div>
-                )}
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: item.objectPosition }}
+                  sizes="(max-width: 768px) 50vw, 40vw"
+                />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors pointer-events-none" />
               </div>
             </div>

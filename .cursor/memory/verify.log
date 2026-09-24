@@ -18,3 +18,4 @@
 - Press Release PDF + one-pager files when ready
 
 **Done when Node available:** run `npm install && npm run lint && npm run build`
+2026-09-24 10:17 | tier=full | lint=skipped(bunx-missing) | typecheck=pass | build=pass | static=pass | dynamic=n/a(photos) | reviewer=pass | overall=PASS | note=cast+stills images

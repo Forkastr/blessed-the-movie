@@ -38,7 +38,7 @@ Official film website + EPK for *Blessed* — New Orleans comedy about J-Bird's 
 
 ## Known gotchas
 
-- No film stills/poster draft images in repo yet; gallery uses hero + placeholders
+- Cast + stills images live in `public/images/` (cast-*, still-*, hero-bridge)
 - Experience It / Watch section intentionally removed
 
 ## Active branch / PR
@@ -47,4 +47,4 @@ Official film website + EPK for *Blessed* — New Orleans comedy about J-Bird's 
 
 ## Last session
 
-- 2026-08-09: stakeholder content pass (Overview → Crew)
+- 2026-09-24: cast photos (J-Bird, Linda, Neighborhood) + stills gallery (bridge kept)
